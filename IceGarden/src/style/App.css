@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+#root {
+  max-width: 1820px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+a {
+    color: #ffff;
+    transition: ease 0.3s;
+}
+
+a:hover {
+  color: rgb(0, 87, 138);
+}
