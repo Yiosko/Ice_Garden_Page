@@ -1,6 +1,7 @@
 import "../style/App.css";
-import IconoSvg from "../assets/svg/icono-ice-svg";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { NavLink }                                       from "react-router";
+import IconoSvg                                          from "../assets/svg/icono-ice-svg";
+import { FontAwesomeIcon }                               from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTiktok, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 
@@ -17,21 +18,23 @@ function Footer () {
 
                         <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
                             <li>
-                                <a
+                                <NavLink 
+                                    to="/about" 
                                     className="transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-                                    href="#"
+                                    end
                                 >
                                     Sobre Nosotros
-                                </a>
+                                </NavLink>
                             </li>
 
                             <li>
-                                <a 
+                                <NavLink 
+                                    to="/familia"
                                     className="transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
-                                    href="#"
+                                    end
                                 >
                                     Familia Ice Garden
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
 
