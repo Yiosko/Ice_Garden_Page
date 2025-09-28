@@ -7,7 +7,8 @@ import App                                   from './pages/App.jsx';
 import Ubicacion                             from './pages/Ubicacion.jsx';
 import Ordenar                               from './pages/Ordenar.jsx';
 import About                                 from './pages/About.jsx';
-import Familia                                from './pages/Familia.jsx';
+import Familia                               from './pages/Familia.jsx';
+import Contanto                              from './pages/Contacto.jsx';
 
 import store                                 from './store/index.js';
 import { Provider }                          from 'react-redux';
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
           <Route  path='/'        element={ <App /> } />
           <Route path='ordenar'  element={ <Ordenar /> } />
           <Route path='ubicacion' element={ <Ubicacion /> } />
+          <Route path='contacto' element={ <Contanto /> } />
 
           {/* Footer */}
           <Route path='about' element={ <About/> } />
