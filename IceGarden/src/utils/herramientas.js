@@ -2,10 +2,13 @@ import imgMediano  from '../assets/ordenar/imgMediano.png';
 import imgGrande   from '../assets/ordenar/imgGrande.png';
 import imgGarden   from '../assets/ordenar/imgGarden.png';
 import imgSmoothie from '../assets/ordenar/imgSmoothie.png';
+import imgLitro    from '../assets/ordenar/imgLitro.png';
 
 import MedianoSVG from '../assets/ordenar/icons/MedianoSVG';
 import GrandeSVG from '../assets/ordenar/icons/GrandeSVG';
 import GardenSVG from '../assets/ordenar/icons/GardenSVG';
+import LitroSVG from '../assets/ordenar/icons/LitroSVG';
+import SmoothieSVG from '../assets/ordenar/icons/SmoothieSVG';
 
 export const recipientes = [
     {
@@ -13,14 +16,14 @@ export const recipientes = [
         'opciones': [
             {tamaño: 'Mediano', topMax: 5, freeTop: 0, precio: 8900, descripcion: 'Relaxed cup de helado de yogurt, decoralo con tus garden fruits',            img: imgMediano, icon: MedianoSVG},
             {tamaño: 'Grande',  topMax: 5, freeTop: 0, precio: 9600, descripcion: 'Relaxed cup de helado de yogurt más grande, decoralo con tus garden fruits', img: imgGrande,  icon: GrandeSVG},
-            {tamaño: 'Garden',  topMax: 6, freeTop: 3, precio: 17000, descripcion: 'La maxima exprecion, el legado y la imagen de la marca el IceGarden',       img: imgGarden, icon: GardenSVG},
-            {tamaño: 'Litro',   topMax: 8, freeTop: 0, precio: 39500, descripcion: 'La definicion absoluta de que no hay limites para ti, limites con L'}
+            {tamaño: 'Garden',  topMax: 6, freeTop: 3, precio: 17000, descripcion: 'La maxima exprecion, el legado y la imagen de la marca el IceGarden',       img: imgGarden,  icon: GardenSVG},
+            {tamaño: 'Litro',   topMax: 8, freeTop: 0, precio: 39500, descripcion: 'La definicion absoluta de que no hay limites para ti, limites con L',       img: imgLitro,   icon: LitroSVG}
         ]
     },
     {
         'categoria': 'Experiencias',
         'opciones': [
-            {tamaño: 'Smoothie', topMax: 3, freeTop: 3, precio: 14600, descripcion: 'Un elixir icy, te gusta probar cosas nuevas y estas te sorprenderan', img: imgSmoothie},
+            {tamaño: 'Smoothie', topMax: 3, freeTop: 3, precio: 14600, descripcion: 'Un elixir icy, te gusta probar cosas nuevas y estas te sorprenderan', img: imgSmoothie, icon: SmoothieSVG},
             {tamaño: 'IceBerg',  topMax: 2, freeTop: 2, precio: 17600, descripcion: ''},
             {tamaño: 'Artic',    topMax: 2, freeTop: 2, precio: 19600, descripcion: ''}
         ]

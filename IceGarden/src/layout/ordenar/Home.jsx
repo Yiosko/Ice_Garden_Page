@@ -60,6 +60,60 @@ function Home () {
         })
     }
 
+    const eliminarTopping = (index) => {
+        console.log(index);
+        setPedido((prev) => {
+            const esHelado = prev[helado];
+            if(!esHelado) return prev;
+
+            const nuevosToppings = esHelado.toppings.filter((_, i) => i !== index); // lista de toppings sin el helao
+
+            let valor = esHelado.valorTotal;
+            const toppingEliminado = esHelado.toppings[index];
+
+            const categoria = toppings.find((cat) => 
+                Object.values(cat.opciones).some((arr) => 
+                    arr.some((t) => t.name === toppingEliminado )
+                )
+            );
+
+            const dataToppings = categoria
+            ? Object.values(categoria.opciones)
+                .flat()
+                .find((t) => t.name == toppingEliminado)
+            : null ;
+
+            if(dataToppings && nuevosToppings.length >= esHelado.freeTop){ // si no habia descuento
+                valor -= dataToppings.precio;
+            }
+
+            return {
+                ...prev,
+                [helado]: {
+                ...esHelado,
+                toppings: nuevosToppings,
+                valorTotal: valor,
+                }
+            }
+
+        })
+    }
+
+    const eliminarHelado = (heladoE) => {
+        setPedido((prev) => {
+            const nuevoPedido = {...prev};
+            delete nuevoPedido[heladoE];
+            return nuevoPedido;
+        });
+
+        if(helado === heladoE){
+            setHelado(null);
+            setPasos(1)
+        }
+    }
+
+    const HeladoIconP = pedido[helado]?.icon;
+
     return (
         <>
             <div className="min-h-screen bg-white">
@@ -82,13 +136,19 @@ function Home () {
                             Object.keys(pedido).map((idHelado) => {
                                 const HeladoIcon = pedido[idHelado].icon;
                                 return (
-                                    <div key={idHelado}
-                                        className='flex w-20 justify-center h-[10vh] bg-rose-400 m-2 rounded-2xl'
-                                        onClick={() => {
-                                            setHelado(idHelado);
-                                            setPasos(2);
-                                        }}>
-                                        {<HeladoIcon className="h-[10vh]" />}
+                                    <div className='relative'>
+                                        <div key={idHelado}
+                                            className='flex w-20 justify-center h-[10vh] bg-rose-400 m-2 rounded-2xl'
+                                            onClick={() => {
+                                                setHelado(idHelado);
+                                                setPasos(2);
+                                            }}>
+                                            {<HeladoIcon className="h-[10vh]" />}
+                                        </div>
+                                        <button className='bg-black absolute rounded-2xl w-6 h-6 right-0 top-0'
+                                                onClick={() => {eliminarHelado(idHelado)}}>
+                                                ❌
+                                        </button>
                                     </div>
                                 )
                             })
@@ -144,6 +204,29 @@ function Home () {
 
                 { pasos === 2 && helado && (<>
                     <h2 className='bg-cyan-400'>Agregar Toppings</h2>
+
+                    <div className='flex row mx-auto items-center w-full max-w-7xl h-[14vh] bg-amber-800 rounded-2xl mb-3'>
+                        <div className='flex w-20 justify-center h-[10vh] bg-rose-400 m-2 rounded-2xl'>
+                            {
+                                <HeladoIconP className="h-[10vh]" />
+                            }
+                        </div>
+
+                        {
+                            pedido[helado]?.toppings.map((ice, idx) => (
+                                <div className='relative'>
+                                    <div    key={idx}
+                                            className='flex w-20 justify-center h-[10vh] bg-rose-400 m-2 rounded-2xl'>
+                                            {ice}
+                                    </div>
+                                    <button className='bg-black absolute rounded-2xl w-6 h-6 right-0 top-0'
+                                                        onClick={() => {eliminarTopping(idx)}}>
+                                                    ❌
+                                    </button>
+                                </div>
+                            ))
+                        }
+                    </div>
 
                     <div className='flex flex-col items-center md:flex-row md:max-w-7xl md:justify-between mx-auto p-6 bg-amber-600'>
                         <div className='h-[32rem] w-96 bg-amber-100'>
