@@ -14,8 +14,8 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                 </div>
 
                     <div className='flex row mx-auto items-center w-full max-w-7xl h-[14vh] rounded-2xl mb-3'>
-                        <div className="w-full max-w-7xl h-[14vh] rounded-2xl bg-white absolute opacity-50">
-
+                        <div className="w-full max-w-7xl h-[14vh] bg-white absolute opacity-50">
+                            {/* fondo */}
                         </div>
                         {
                             Object.keys(pedido).map((idHelado) => {
@@ -52,11 +52,11 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                             {
                             recipientes.find((cat) => (cat.categoria === vista))
                             ?.opciones.map((opcion, idx) => (
-                                <div key={idx} className='h-64 md:h-96 min-w-60 card p-3'>
+                                <div key={idx} className='h-64 md:h-96 min-w-60 card'>
                                     <div className='card-inner'>
-                                        <div className='card-front bg-cover bg-center blur-md inset-0' style={{ backgroundImage: `url(${opcion.img})` }}>
-
-                                            <div className=" blur-md scale-110" ></div>
+                                        
+                                        <div className='card-front relative bg-cover bg-center blur-md inset-0' style={{ backgroundImage: `url(${opcion.img})` }}>
+                                            <div className="h-64 md:h-96 absolute rounded-2xl min-w-60 inset-0 bg-white opacity-35" style={{borderRadius: '10px'}}></div>
 
                                             <p className='z-10'>{opcion.tamaño.toLocaleUpperCase()}</p>
 

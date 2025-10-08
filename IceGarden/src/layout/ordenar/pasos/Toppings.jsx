@@ -49,7 +49,7 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
                         </div>
                     </div>
 
-                        <div className='h-[32rem] items-center w-full md:w-[67%] bg-amber-200'>
+                        <div className='h-[32rem] items-center w-full md:w-[67%] bg-amber-100'>
                             <div className='flex w-full items-center flex-col'>
                                 <div className='flex w-full flex-col'>
 
