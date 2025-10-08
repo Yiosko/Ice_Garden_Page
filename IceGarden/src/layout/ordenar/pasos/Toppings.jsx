@@ -1,8 +1,8 @@
 function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCategoria, setSubCat, agregarToppings, eliminarTopping, setPasos, HeladoIconP }){
     return (<>
-                <h2 className='bg-cyan-400'>Agregar Toppings</h2>
-
-                <div className='flex row mx-auto items-center w-full max-w-7xl h-[14vh] bg-amber-800 rounded-2xl mb-3'>
+                <div className='flex row mx-auto items-center w-full max-w-7xl h-[14vh] pt-4 rounded-2xl mb-3'>
+                    <div className="w-full max-w-7xl h-[14vh] rounded-2xl bg-white absolute opacity-50 -z-10">
+                    </div>
                     <div className='flex w-20 justify-center h-[10vh] bg-rose-400 m-2 rounded-2xl'>
                         {
                             <HeladoIconP className="h-[10vh]" />
@@ -25,7 +25,10 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
                     }
                 </div>
 
-                <div className='flex flex-col items-center md:flex-row md:max-w-7xl md:justify-between mx-auto p-6 bg-amber-600'>
+                <div className='flex relative flex-col items-center md:flex-row md:max-w-7xl md:justify-between mx-auto p-6'>
+                    <div className="absolute inset-0 bg-white rounded-2xl p-6 opacity-50 -z-10">
+
+                    </div>
                     <div className='h-[32rem] w-96 bg-amber-100'>
                         <div className='h-full flex flex-col relative'>
                             <span className='bg-cyan-400 w-full'>

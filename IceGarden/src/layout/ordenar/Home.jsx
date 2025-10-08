@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { recipientes, toppings } from '../../utils/herramientas';
+import imgFondo from '../../assets/ordenar/fondoIce.png';
 
 import Presentaciones from './pasos/Presentaciones';
 import Toppings from './pasos/Toppings';
@@ -117,7 +118,12 @@ function Home () {
 
     return (
         <>
-            <div className="min-h-screen bg-white">
+            <div className="min-h-screen relative">
+                <div className='min-h-screen inset-0 -z-10 bg-white absolute' style={{ backgroundImage: `url(${imgFondo})`,
+                                                                                         backgroundSize: 'cover'
+                                                                                       }}>
+                    {/* fondo */}
+                </div>
                 { pasos === 1 && ( <>
                     <Presentaciones
                             recipientes={recipientes}
