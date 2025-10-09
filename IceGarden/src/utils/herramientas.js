@@ -4,11 +4,18 @@ import imgGarden   from '../assets/ordenar/imgGarden.png';
 import imgSmoothie from '../assets/ordenar/imgSmoothie.png';
 import imgLitro    from '../assets/ordenar/imgLitro.png';
 
-import MedianoSVG from '../assets/ordenar/icons/MedianoSVG';
+import MedianoSVG from '../assets/ordenar/icons/MedianoSVG'; // ? PRESENTACIONES
 import GrandeSVG from '../assets/ordenar/icons/GrandeSVG';
 import GardenSVG from '../assets/ordenar/icons/GardenSVG';
 import LitroSVG from '../assets/ordenar/icons/LitroSVG';
 import SmoothieSVG from '../assets/ordenar/icons/SmoothieSVG';
+
+import FresaSVG  from '../assets/ordenar/icons/toppings/FresaSVG';// ? TOPPINGS
+import KiwiSVG   from '../assets/ordenar/icons/toppings/KiwiSVG';
+import MangoSVG  from '../assets/ordenar/icons/toppings/MangoSVG';
+import PiñaSVG   from '../assets/ordenar/icons/toppings/PiñaSVG';
+import SandiaSVG from '../assets/ordenar/icons/toppings/SandiaSVG';
+import MoraSVG   from '../assets/ordenar/icons/toppings/MoraSVG'; 
 
 export const recipientes = [
     {
@@ -43,12 +50,12 @@ export const toppings = [
         'categoria': 'clasicos',
         'opciones': {
             'frutas': [
-                {name: 'fresas',     precio: 2000},
-                {name: 'mango',      precio: 2000},
-                {name: 'piña',       precio: 2000},
-                {name: 'sandia',     precio: 2000},
-                {name: 'kiwi',       precio: 2000},
-                {name: 'mora',       precio: 2000},
+                {name: 'fresas',     precio: 2000, icon: FresaSVG},
+                {name: 'mango',      precio: 2000, icon: MangoSVG},
+                {name: 'piña',       precio: 2000, icon: PiñaSVG},
+                {name: 'sandia',     precio: 2000, icon: SandiaSVG},
+                {name: 'kiwi',       precio: 2000, icon: KiwiSVG},
+                {name: 'mora',       precio: 2000, icon: MoraSVG},
                 {name: 'maracuya',   precio: 2000},
                 {name: 'guanabana',  precio: 2000},
                 {name: 'lulo',       precio: 2000},
