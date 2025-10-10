@@ -11,10 +11,9 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
 
                     {
                         pedido[helado]?.toppings.map((ice, idx) => (
-                            <div className='relative'>
-                                <div    key={idx}
-                                        className='flex w-20 justify-center h-[10vh] bg-rose-400 m-2 rounded-2xl'>
-                                        {ice}
+                            <div className='relative' key={idx}>
+                                <div className='flex w-20 justify-center items-center h-[10vh] bg-rose-400 m-2 rounded-2xl'>
+                                        {ice.icon ? <ice.icon className="h-[8vh]"/> : ice.name.toLocaleUpperCase()}
                                 </div>
                                 <button className='bg-black absolute rounded-2xl w-6 h-6 right-0 top-0'
                                                     onClick={() => {eliminarTopping(idx)}}>
@@ -38,7 +37,7 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
                                     pedido[helado]?.toppings.map((ice, idx) => (
                                         <span key={idx}
                                                 className='bg-cyan-400 w-full'>
-                                            {ice.toLocaleUpperCase()}
+                                            {ice.name.toLocaleUpperCase()}
                                         </span>
                                     ))
 
@@ -89,26 +88,23 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
 
                                 <div className='w-[90%] max-h-3/4 bg-amber-50 mt-3 p-1 rounded-2xl'>
                                     <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3'>
-                                        {
-                                            (toppings.find((cat) => cat.categoria === categoria)
-                                            ?.opciones[subCategoria] || []
-                                            ).map((topping, idx) => (
+                                        {(toppings.find(cat => cat.categoria === categoria)?.opciones[subCategoria] || [])
+                                        .map((topping, idx) => {
+                                            const Icono = topping.icon;
+                                            return (
                                             <button
                                                 key={idx}
+                                                className="flex flex-col relative justify-between items-center bg-emerald-400 m-1 px-3 py-2 rounded-lg w-[70%] hover:bg-emerald-500"
                                                 onClick={() => agregarToppings(topping)}
-                                                className="bg-emerald-400 m-1 px-3 py-2 rounded-lg w-full hover:bg-emerald-500"
                                             >
-                                                <div className='flex flex-col items-center'>
-                                                    <span>
-                                                        {topping.name.toLocaleUpperCase()}
-                                                    </span>
-                                                    <span>
-                                                        ${topping.precio}
-                                                    </span>
+                                                {Icono && <Icono className="w-[70%] h-[70%]" />}
+                                                <div className="w-full h-full inset-0 absolute opacity-0 hover:opacity-100">
+                                                    <p className="font-bold absolute left-2 top-2">{topping.name.toLocaleUpperCase()}</p>
                                                 </div>
+                                                <p className="text-sm">${topping.precio}</p>
                                             </button>
-                                            ))
-                                        }
+                                            );
+                                        })}
                                     </div>
                                 </div>
 
