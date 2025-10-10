@@ -1,6 +1,6 @@
 function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, eliminarHelado, setHelado, setPasos }) {
     return (<>
-                <div className='flex row justify-between max-w-5xl mx-auto p-4'>
+                <div className='flex row justify-between max-w-5xl mx-auto pt-4'>
                     {
                         recipientes.map((cat) => (
                             <button key={cat.categoria}
@@ -13,7 +13,10 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                     }
                 </div>
 
-                    <div className='flex row mx-auto items-center w-full max-w-7xl h-[14vh] bg-amber-800 rounded-2xl mb-3'>
+                    <div className='flex row mx-auto items-center w-full max-w-7xl h-[14vh] rounded-2xl mb-3'>
+                        <div className="w-full max-w-7xl h-[14vh] bg-white absolute opacity-50">
+                            {/* fondo */}
+                        </div>
                         {
                             Object.keys(pedido).map((idHelado) => {
                                 const HeladoIcon = pedido[idHelado].icon;
@@ -37,19 +40,23 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                         }
                     </div>
 
-                    <div className='flex flex-col items-center max-w-7xl mx-auto p-6 bg-amber-200'>
-                        <h2 className='text-2xl font-bold mb-3'>
+                    <div className='flex relative flex-col items-center max-w-7xl mx-auto p-6'>
+                        <div className="w-full h-full rounded-2xl absolute bg-white opacity-50">
+
+                        </div>
+
+                        <h2 className='text-2xl font-bold mb-3 text-cyan-300'>
                             Opciones de {vista}
                         </h2>
                         <div className='flex flex-col w-4 md:flex-row justify-between items-center md:w-6xl'>
                             {
                             recipientes.find((cat) => (cat.categoria === vista))
                             ?.opciones.map((opcion, idx) => (
-                                <div key={idx} className='h-64 md:h-96 min-w-60 card p-3'>
+                                <div key={idx} className='h-64 md:h-96 min-w-60 card'>
                                     <div className='card-inner'>
-                                        <div className='card-front bg-cover bg-center blur-md inset-0' style={{ backgroundImage: `url(${opcion.img})` }}>
-
-                                            <div className=" blur-md scale-110" ></div>
+                                        
+                                        <div className='card-front relative bg-cover bg-center blur-md inset-0' style={{ backgroundImage: `url(${opcion.img})` }}>
+                                            <div className="h-64 md:h-96 absolute rounded-2xl min-w-60 inset-0 bg-white opacity-35" style={{borderRadius: '10px'}}></div>
 
                                             <p className='z-10'>{opcion.tamaño.toLocaleUpperCase()}</p>
 
@@ -59,17 +66,17 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                                                                                             backgroundSize: 'cover',
                                                                                             backgroundPosition: 'center'
                                                                                         }}>
-                                            <span className=''>
-                                                {opcion.tamaño} - Maximo toppings {opcion.topMax}
+                                            <span className='text-base font-bold text-left'>
+                                                <div className="text-cyan-500">{opcion.tamaño}</div> Maximo toppings <div className="text-cyan-500 inline">{opcion.topMax} </div>
                                             </span>
-                                            <span className=''>
+                                            <span className='text-sm font-bold text-justify p-4'>
                                                 {opcion.descripcion}
                                             </span>
 
-                                            <span>
+                                            <span className="text-emerald-600 font-extrabold">
                                             ${opcion.precio}
                                             </span>
-                                            <button className='bg-emerald-400'
+                                            <button className='bg-emerald-400 text-base p-1'
                                                     onClick={() => {agregarHelado(opcion)}}>
                                                 Escoger
                                             </button>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { recipientes, toppings } from '../../utils/herramientas';
+import imgFondo from '../../assets/ordenar/fondoIce.png';
 
 import Presentaciones from './pasos/Presentaciones';
 import Toppings from './pasos/Toppings';
@@ -56,7 +57,7 @@ function Home () {
                 ...prev,
                 [helado]: {
                     ...esHelado,
-                    toppings: [...esHelado.toppings, topping.name],
+                    toppings: [...esHelado.toppings, topping],
                     valorTotal: valor
                 },
             }
@@ -64,30 +65,17 @@ function Home () {
     }
 
     const eliminarTopping = (index) => {
-        console.log(index);
         setPedido((prev) => {
             const esHelado = prev[helado];
             if(!esHelado) return prev;
 
+            const toppingEliminado = esHelado.toppings[index];
             const nuevosToppings = esHelado.toppings.filter((_, i) => i !== index); // lista de toppings sin el helao
 
             let valor = esHelado.valorTotal;
-            const toppingEliminado = esHelado.toppings[index];
 
-            const categoria = toppings.find((cat) => 
-                Object.values(cat.opciones).some((arr) => 
-                    arr.some((t) => t.name === toppingEliminado )
-                )
-            );
-
-            const dataToppings = categoria
-            ? Object.values(categoria.opciones)
-                .flat()
-                .find((t) => t.name == toppingEliminado)
-            : null ;
-
-            if(dataToppings && nuevosToppings.length >= esHelado.freeTop){ // si no habia descuento
-                valor -= dataToppings.precio;
+            if(nuevosToppings.length >= esHelado.freeTop){ // si no habia descuento
+                valor -= toppingEliminado.precio;
             }
 
             return {
@@ -117,7 +105,12 @@ function Home () {
 
     return (
         <>
-            <div className="min-h-screen bg-white">
+            <div className="min-h-screen relative">
+                <div className='min-h-screen inset-0 -z-10 bg-white absolute' style={{ backgroundImage: `url(${imgFondo})`,
+                                                                                         backgroundSize: 'cover'
+                                                                                       }}>
+                    {/* fondo */}
+                </div>
                 { pasos === 1 && ( <>
                     <Presentaciones
                             recipientes={recipientes}

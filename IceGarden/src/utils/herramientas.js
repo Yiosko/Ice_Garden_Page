@@ -1,14 +1,28 @@
-import imgMediano  from '../assets/ordenar/imgMediano.png';
-import imgGrande   from '../assets/ordenar/imgGrande.png';
-import imgGarden   from '../assets/ordenar/imgGarden.png';
-import imgSmoothie from '../assets/ordenar/imgSmoothie.png';
-import imgLitro    from '../assets/ordenar/imgLitro.png';
+import imgMediano   from '../assets/ordenar/imgMediano.png'; // ? FONDO DE PRESENTACIONES
+import imgGrande    from '../assets/ordenar/imgGrande.png';
+import imgGarden    from '../assets/ordenar/imgGarden.png';
+import imgSmoothie  from '../assets/ordenar/imgSmoothie.png';
+import imgLitro     from '../assets/ordenar/imgLitro.png';
 
-import MedianoSVG from '../assets/ordenar/icons/MedianoSVG';
-import GrandeSVG from '../assets/ordenar/icons/GrandeSVG';
-import GardenSVG from '../assets/ordenar/icons/GardenSVG';
-import LitroSVG from '../assets/ordenar/icons/LitroSVG';
-import SmoothieSVG from '../assets/ordenar/icons/SmoothieSVG';
+import MedianoSVG   from '../assets/ordenar/icons/MedianoSVG'; // ? PRESENTACIONES
+import GrandeSVG    from '../assets/ordenar/icons/GrandeSVG';
+import GardenSVG    from '../assets/ordenar/icons/GardenSVG';
+import LitroSVG     from '../assets/ordenar/icons/LitroSVG';
+import SmoothieSVG  from '../assets/ordenar/icons/SmoothieSVG';
+
+import FresaSVG     from '../assets/ordenar/icons/toppings/frutas/clasicas/FresaSVG';// ? TOPPINGS
+import KiwiSVG      from '../assets/ordenar/icons/toppings/frutas/clasicas/KiwiSVG';
+import MangoSVG     from '../assets/ordenar/icons/toppings/frutas/clasicas/MangoSVG';
+import PiñaSVG      from '../assets/ordenar/icons/toppings/frutas/clasicas/PiñaSVG';
+import SandiaSVG    from '../assets/ordenar/icons/toppings/frutas/clasicas/SandiaSVG';
+import MoraSVG      from '../assets/ordenar/icons/toppings/frutas/clasicas/MoraSVG'; 
+import MaracuyaSVG  from '../assets/ordenar/icons/toppings/frutas/clasicas/MaracuyaSVG';
+import GuanabanaSVG from '../assets/ordenar/icons/toppings/frutas/clasicas/GuanabanaSVG';
+import LuloSVG      from '../assets/ordenar/icons/toppings/frutas/clasicas/LuloSVG';
+import CerezaSVG    from '../assets/ordenar/icons/toppings/frutas/premium/CerezaSVG';
+import ArandanosSVG from '../assets/ordenar/icons/toppings/frutas/premium/ArandanosSVG';
+import DuraznoSVG   from '../assets/ordenar/icons/toppings/frutas/premium/DuraznoSVG';
+import LycheeSVG    from '../assets/ordenar/icons/toppings/frutas/premium/LycheeSVG';
 
 export const recipientes = [
     {
@@ -43,15 +57,15 @@ export const toppings = [
         'categoria': 'clasicos',
         'opciones': {
             'frutas': [
-                {name: 'fresas',     precio: 2000},
-                {name: 'mango',      precio: 2000},
-                {name: 'piña',       precio: 2000},
-                {name: 'sandia',     precio: 2000},
-                {name: 'kiwi',       precio: 2000},
-                {name: 'mora',       precio: 2000},
-                {name: 'maracuya',   precio: 2000},
-                {name: 'guanabana',  precio: 2000},
-                {name: 'lulo',       precio: 2000},
+                {name: 'fresas',     precio: 2000, icon: FresaSVG},
+                {name: 'mango',      precio: 2000, icon: MangoSVG},
+                {name: 'piña',       precio: 2000, icon: PiñaSVG},
+                {name: 'sandia',     precio: 2000, icon: SandiaSVG},
+                {name: 'kiwi',       precio: 2000, icon: KiwiSVG},
+                {name: 'mora',       precio: 2000, icon: MoraSVG},
+                {name: 'maracuya',   precio: 2000, icon: MaracuyaSVG},
+                {name: 'guanabana',  precio: 2000, icon: GuanabanaSVG},
+                {name: 'lulo',       precio: 2000, icon: LuloSVG},
             ],
             'dulces': [
                 {name: 'zucaritas',    precio: 2000},
@@ -79,10 +93,10 @@ export const toppings = [
         'categoria': 'premium',
         'opciones': {
             'frutas': [
-                {name: 'cereza', precio: 2900},
-                {name: 'arandanos', precio: 2900},
-                {name: 'durazno', precio: 2900},
-                {name: 'lyche', precio: 2900},
+                {name: 'cereza', precio: 2900, icon: CerezaSVG},
+                {name: 'arandanos', precio: 2900, icon: ArandanosSVG},
+                {name: 'durazno', precio: 2900, icon: DuraznoSVG},
+                {name: 'lyche', precio: 2900, icon: LycheeSVG},
                 {name: 'caviar', precio: 2900}
             ],
             'dulces': [
