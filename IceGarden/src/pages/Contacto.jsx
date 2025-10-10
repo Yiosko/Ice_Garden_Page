@@ -2,7 +2,7 @@ import Header from "../layout/header";
 import Footer from "../layout/Footer";
 import Home   from "../layout/contacto/Home";
 
-function Contanto () {
+function Contacto () {
     return (
         <>
             <Header />
@@ -12,4 +12,4 @@ function Contanto () {
     )
 }
 
-export default Contanto;
+export default Contacto;
