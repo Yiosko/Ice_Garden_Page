@@ -1,4 +1,4 @@
-import Header from "../layout/header";
+import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 import Home   from "../layout/about/Home"
 
