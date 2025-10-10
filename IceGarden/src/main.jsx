@@ -8,7 +8,7 @@ import Ubicacion                             from './pages/Ubicacion.jsx';
 import Ordenar                               from './pages/Ordenar.jsx';
 import About                                 from './pages/About.jsx';
 import Familia                               from './pages/Familia.jsx';
-import Contanto                              from './pages/Contacto.jsx';
+import Contacto                              from './pages/Contacto.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')).render(
           <Route  path='/'        element={ <App /> } />
           <Route path='ordenar'  element={ <Ordenar /> } />
           <Route path='ubicacion' element={ <Ubicacion /> } />
-          <Route path='contacto' element={ <Contanto /> } />
+          <Route path='contacto' element={ <Contacto /> } />
 
           {/* Footer */}
           <Route path='about' element={ <About/> } />
