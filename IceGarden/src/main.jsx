@@ -10,13 +10,9 @@ import About                                 from './pages/About.jsx';
 import Familia                               from './pages/Familia.jsx';
 import Contanto                              from './pages/Contacto.jsx';
 
-import store                                 from './store/index.js';
-import { Provider }                          from 'react-redux';
-
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <StrictMode>
-      <Provider store={store}>
         
         <Routes>
 
@@ -31,7 +27,6 @@ createRoot(document.getElementById('root')).render(
 
         </Routes>
         
-      </Provider>
     </StrictMode>
   </BrowserRouter>
 )
