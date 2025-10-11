@@ -1,6 +1,6 @@
 function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCategoria, setSubCat, agregarToppings, eliminarTopping, setPasos, HeladoIconP }){
     return (<>
-                <div className='flex row mx-auto items-center w-full max-w-7xl h-[14vh] pt-4 rounded-2xl mb-3'>
+                <div className='flex overflow-x-auto overflow-y-hidden row mx-auto items-center w-full max-w-7xl h-[14vh] pt-4 rounded-2xl mb-3'>
                     <div className="w-full max-w-7xl h-[14vh] rounded-2xl bg-white absolute opacity-50 -z-10">
                     </div>
                     <div className='flex w-20 justify-center h-[10vh] bg-rose-400 m-2 rounded-2xl'>
@@ -28,7 +28,7 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
                     <div className="absolute inset-0 bg-white rounded-2xl p-6 opacity-50 -z-10">
 
                     </div>
-                    <div className='h-[32rem] w-96 bg-amber-100'>
+                    <div className='h-[32rem] w-[90vw] md:w-96 bg-amber-100'>
                         <div className='h-full flex flex-col relative'>
                             <span className='bg-cyan-400 w-full'>
                                 {pedido[helado]?.tamaño.toLocaleUpperCase()}
@@ -87,14 +87,14 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
                                 </div>
 
                                 <div className='w-[90%] max-h-3/4 bg-amber-50 mt-3 p-1 rounded-2xl'>
-                                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3'>
+                                    <div className='grid grid-cols-2 place-items-center sm:grid-cols-3 md:grid-cols-4 gap-3'>
                                         {(toppings.find(cat => cat.categoria === categoria)?.opciones[subCategoria] || [])
                                         .map((topping, idx) => {
                                             const Icono = topping.icon;
                                             return (
                                             <button
                                                 key={idx}
-                                                className="flex flex-col relative justify-between items-center bg-emerald-400 m-1 px-3 py-2 rounded-lg w-[70%] hover:bg-emerald-500"
+                                                className="flex flex-col relative justify-between items-center bg-emerald-400 m-1 px-3 py-2 rounded-lg w-[50%] md:w-[70%] hover:bg-emerald-500"
                                                 onClick={() => agregarToppings(topping)}
                                             >
                                                 {Icono && <Icono className="w-[70%] h-[70%]" />}
@@ -111,11 +111,11 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
                             </div>
                         </div>
                     </div>
-                    <button className='bg-cyan-500'
+                    <button className='bg-cyan-500 rounded-2xl w-[35vw] h-[5vh] m-2'
                             onClick={() => setPasos(1)}>
                         Ordenar Otro
                     </button>
-                    <button className='bg-amber-600'
+                    <button className='bg-emerald-600 rounded-2xl w-[35vw] h-[5vh] m-2'
                             onClick={() => setPasos(3)}>
                         Continuar Pago
                     </button>
