@@ -13,7 +13,7 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                     }
                 </div>
 
-                    <div className='flex row mx-auto items-center w-full max-w-7xl h-[14vh] rounded-2xl mb-3'>
+                    <div className='flex overflow-x-auto overflow-y-hidden row mx-auto items-center w-full max-w-7xl h-[14vh] rounded-2xl mb-3'>
                         <div className="w-full max-w-7xl h-[14vh] bg-white absolute opacity-50">
                             {/* fondo */}
                         </div>
