@@ -144,35 +144,36 @@ function Home () {
                 {pasos === 3 && (<>
 
 
-                    <div className='flex flex-row w-full justify-center'>
-                        <div className='flex flex-col relative rounded-2xl w-[45vw] h-[80vh] m-4'>
+                    <div className='flex flex-col md:flex-row w-full justify-center'>
+                        <div className='relative rounded-2xl w-[90vw] h-[50vh] md:w-[45vw] md:h-[80vh] m-4'>
                             <div className='absolute w-full h-full rounded-2xl bg-white opacity-50 -z-10'>
                                 {/* FONDO */}
                             </div>
-
-                            {
-                                Object.keys(pedido).map((idHelado) => {
-                                    const IconHelado = pedido[idHelado].icon;
-                                    return (
-                                        <div className='flex flex-row items-center justify-center'>
-                                            <div className='flex items-center bg-white h-[12vh] w-[80%] rounded-2xl m-1'>
-                                                <span className='h-[10vh] w-[12%] ml-4 rounded-2xl bg-pink-500'>
-                                                    {IconHelado ? <IconHelado className='h-full w-full' /> : pedido[idHelado].tamaño.toLocalUpperCase()}
-                                                </span>
-                                                <span className='text-4xl text-emerald-800 font-bold'>
-                                                    $ {pedido[idHelado].valorTotal}
-                                                </span>
+                            <div className='flex flex-col h-full overflow-x-hidden overflow-y-auto'>
+                                {
+                                    Object.keys(pedido).map((idHelado) => {
+                                        const IconHelado = pedido[idHelado].icon;
+                                        return (
+                                            <div className='flex flex-row items-center justify-center'>
+                                                <div className='flex items-center bg-white h-[12vh] w-[80%] rounded-2xl m-1'>
+                                                    <span className='h-[10vh] w-[12%] ml-4 rounded-2xl bg-pink-500'>
+                                                        {IconHelado ? <IconHelado className='h-full w-full' /> : pedido[idHelado].tamaño.toLocalUpperCase()}
+                                                    </span>
+                                                    <span className='text-4xl text-emerald-800 font-bold'>
+                                                        $ {pedido[idHelado].valorTotal}
+                                                    </span>
+                                                </div>
+                                                <button className='bg-pink-500 text-pink-200 h-[12vh] rounded-2xl w-[10%] text-4xl font-bold'
+                                                        onClick={() => {eliminarHelado(idHelado)}}>
+                                                    X
+                                                </button>
                                             </div>
-                                            <button className='bg-pink-500 text-pink-200 h-[12vh] rounded-2xl w-[10%] text-4xl font-bold'
-                                                    onClick={() => {eliminarHelado(idHelado)}}>
-                                                X
-                                            </button>
-                                        </div>
-                                    )
-                                })
-                            }
+                                        )
+                                    })
+                                }
+                            </div>
                         </div>
-                        <div className='flex flex-col items-center relative rounded-2xl w-[30vw] h-[80vh] m-4'>
+                        <div className='flex flex-col items-center relative rounded-2xl w-[90vw] h-[50vh] md:w-[30vw] md:h-[80vh] m-4'>
                             <div className='absolute w-full h-full rounded-2xl bg-white opacity-50 -z-10'>
                                 {/* FONDO */}
                             </div>
