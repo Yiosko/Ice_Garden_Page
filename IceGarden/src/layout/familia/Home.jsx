@@ -1,84 +1,175 @@
 import '../../style/App.css';
-import { useState } from 'react'; //Guardar
+import { useState } from 'react';
 
+function Home() {
+  const [stateMotivo, setStateMotivo] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [apellidos, setApellidos] = useState('');
 
-function Home () {
-    const [ stateMotivo, setStateMotivo] = useState(''); //Almacenar
-    return (
-        <>
-            <div className='min-h-screen flex flex-col md:flex-row'>
-                <div className="flex-1 flex justify-center items-center bg-white">
-                    <form className="flex flex-col gap-4 bg-pink-100 p-6 rounded-xl shadow-lg w-full max-w-md">
-                        <div className="flex flex-col">
-                            <label>Nombre</label>
-                            <input type="text" className="border p-2 rounded-lg" />
-                        </div>
+  // Permite solo letras y espacios
+  const handleNameChange = (setter, value) => {
+    const soloLetras = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]*$/;
+    if (soloLetras.test(value)) {
+      setter(value);
+    }
+  };
 
-                        <div className="flex flex-col">
-                            <label>Apellidos</label>
-                            <input type="text" className="border p-2 rounded-lg" />
-                        </div>
+  return (
+    <div className="min-h-screen flex flex-col md:flex-row">
+      <div className="flex-1 flex justify-center items-center bg-white">
+        <form
+          className="flex flex-col gap-4 bg-pink-100 p-6 rounded-xl shadow-lg w-full max-w-md"
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Formulario enviado correctamente ✅");
+          }}
+        >
+          
+          <div className="flex flex-col">
+            <label>Nombre</label>
+            <input
+              type="text"
+              value={nombre}
+              onChange={(e) => handleNameChange(setNombre, e.target.value)}
+              className="border p-2 rounded-lg"
+              placeholder="Ejemplo: Marlon"
+              required
+            />
+          </div>
 
-                        <div className="flex flex-col">
-                            <label className="font-semibold"></label>
-                            <select
-                                value={stateMotivo}
-                                onChange={(eventoSeleccionado) => setStateMotivo(eventoSeleccionado.target.value)}
-                                className="border p-2 rounded-lg"
-                            >
-                                <option value="">Seleccione una opción</option>
-                                <option value="1">Vacante</option>
-                                <option value="2">Franquicia</option>
-                            </select>
-                        </div>
+          <div className="flex flex-col">
+            <label>Apellidos</label>
+            <input
+              type="text"
+              value={apellidos}
+              onChange={(e) => handleNameChange(setApellidos, e.target.value)}
+              className="border p-2 rounded-lg"
+              placeholder="Ejemplo: Torres Chavarro"
+              required
+            />
+          </div>
 
-                        {stateMotivo === "1" && (
-                            <div className="flex flex-col gap-4 mt-4">
-                                
-                                <div className="flex flex-col">
-                                    <label>Edad</label>
-                                    <input type="num" className="border p-2 rounded-lg" />
-                                </div>
- 
-                                <div className="flex flex-col">
-                                    <label>Experiencia</label>
-                                    <select
-                                        onChange={(evento) => setStateMotivo(evento.target.value)}
-                                        className="border p-2 rounded-lg"
-                                    >
-                                        <option value="">Seleccione una opción</option>
-                                        <option value="1">Si</option>
-                                        <option value="2">No</option>
-                                    </select>                                       
-                                </div>
+          <div className="flex flex-col">
+            <label>Motivo</label>
+            <select
+              value={stateMotivo}
+              onChange={(e) => setStateMotivo(e.target.value)}
+              className="border p-2 rounded-lg"
+              required
+            >
+              <option value="">Seleccione una opción</option>
+              <option value="1">Vacante</option>
+              <option value="2">Franquicia</option>
+            </select>
+          </div>
 
-                                <div className="flex flex-col">
-                                    <label>Telefono</label>
-                                    <input type="tel" className="border p-2 rounded-lg" />
-                                </div>
+          {stateMotivo === "1" && (
+            <div className="flex flex-col gap-4 mt-4">
+              <div className="flex flex-col">
+                <label>Edad</label>
+                <input
+                  type="number"
+                  className="border p-2 rounded-lg"
+                  min="18"
+                  max="70"
+                  required
+                />
+              </div>
 
-                                <div className="flex flex-col">
-                                    <label>Correo</label>
-                                    <input type="text" className="border p-2 rounded-lg" />
-                                </div>
+              <div className="flex flex-col">
+                <label>Experiencia</label>
+                <select className="border p-2 rounded-lg" required>
+                  <option value="">Seleccione una opción</option>
+                  <option value="Si">Sí</option>
+                  <option value="No">No</option>
+                </select>
+              </div>
 
-                                <div className="flex flex-col">
-                                    <label>Hoja de Vida</label>
-                                    <input type="file" className="border p-2 rounded-lg" />                                                                           
-                                </div>
+              <div className="flex flex-col">
+                <label>Teléfono</label>
+                <input
+                  type="tel"
+                  className="border p-2 rounded-lg"
+                  pattern="[0-9]{10}"
+                  title="Debe contener solo números (10 dígitos)"
+                  placeholder="Ejemplo: 3105642598"
+                  required
+                />
+              </div>
 
-                            </div>
-                        )}
+              <div className="flex flex-col">
+                <label>Correo</label>
+                <input
+                  type="email"
+                  className="border p-2 rounded-lg"
+                  placeholder="Ejemplo: correo@gmail.com"
+                  required
+                />
+              </div>
 
-                        {stateMotivo === "2" && (
-                        <div className="flex flex-col gap-4 mt-4">
-                        </div>
-                        )}
-                    </form>
-                </div>
+              <div className="flex flex-col">
+                <label>Hoja de Vida</label>
+                <input
+                  type="file"
+                  className="border p-2 rounded-lg"
+                  accept=".pdf,.doc,.docx"
+                  required
+                />
+              </div>
             </div>
-        </>
-    )
+          )}
+
+          {stateMotivo === "2" && (
+            <div className="flex flex-col gap-4 mt-4">
+              <div className="flex flex-col">
+                <label>Localidad</label>
+                <input
+                  type="text"
+                  className="border p-2 rounded-lg"
+                  pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
+                  title="Solo se permiten letras y espacios"
+                  required
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label>Descripción</label>
+                <input type="text" className="border p-2 rounded-lg" required />
+              </div>
+
+              <div className="flex flex-col">
+                <label>Teléfono</label>
+                <input
+                  type="tel"
+                  className="border p-2 rounded-lg"
+                  pattern="[0-9]{10}"
+                  title="Debe contener solo números (10 dígitos)"
+                  required
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label>Correo</label>
+                <input
+                  type="email"
+                  className="border p-2 rounded-lg"
+                  placeholder="Ejemplo: correo@gmail.com"
+                  required
+                />
+              </div>
+            </div>
+          )}
+
+          <button
+            type="submit"
+            className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg mt-4 transition-all"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default Home;
