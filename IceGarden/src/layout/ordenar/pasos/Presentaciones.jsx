@@ -13,8 +13,8 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                     }
                 </div>
 
-                    <div className='flex overflow-x-auto overflow-y-hidden row mx-auto items-center w-full max-w-7xl h-[14vh] rounded-2xl mb-3'>
-                        <div className="w-full max-w-7xl h-[14vh] bg-white absolute opacity-50">
+                    <div className='flex relative overflow-x-auto overflow-y-hidden row mx-auto items-center w-full max-w-7xl md:h-[14vh] rounded-2xl mb-3'>
+                        <div className="w-full max-w-7xl h-[14vh] bg-white absolute opacity-50 inset-0">
                             {/* fondo */}
                         </div>
                         {
@@ -41,21 +41,21 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                     </div>
 
                     <div className='flex relative flex-col items-center max-w-7xl mx-auto p-6'>
-                        <div className="w-full h-full rounded-2xl absolute bg-white opacity-50">
+                        <div className="rounded-2xl absolute bg-white opacity-50 inset-0">
 
                         </div>
 
-                        <h2 className='text-2xl font-bold mb-3 text-cyan-300'>
+                        <h2 className='text-2xl font-bold md:mb-3 text-cyan-300'>
                             Opciones de {vista}
                         </h2>
                         <div className='flex flex-col w-4 md:flex-row justify-between items-center md:w-6xl'>
                             {
                             recipientes.find((cat) => (cat.categoria === vista))
                             ?.opciones.map((opcion, idx) => (
-                                <div key={idx} className='h-64 md:h-96 min-w-60 card'>
+                                <div key={idx} className='h-56 md:h-96 min-w-56 card m-2 md:m-0'>
                                     <div className='card-inner'>
                                         
-                                        <div className='card-front relative bg-cover bg-center blur-md inset-0' style={{ backgroundImage: `url(${opcion.img})` }}>
+                                        <div className='card-front relative bg-cover bg-center blur-md' style={{ backgroundImage: `url(${opcion.img})` }}>
                                             <div className="h-64 md:h-96 absolute rounded-2xl min-w-60 inset-0 bg-white opacity-35" style={{borderRadius: '10px'}}></div>
 
                                             <p className='z-10'>{opcion.tamaño.toLocaleUpperCase()}</p>
