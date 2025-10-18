@@ -73,6 +73,7 @@ function Home() {
                     type="number"
                     className="border p-2 rounded-lg no-spinners [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none
                               [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-inner-spin-button]:m-0"
+                    placeholder='ej: 26'
                     min="18"
                     max="70"
                     required
@@ -89,8 +90,8 @@ function Home() {
                 </div>
             </div>
 
-              <div className='flex row w-full'> {/* Reestructuracion del formulario flex en fila */}
-                <div className="flex flex-col w-[25%] mr-2">
+              <div className='flex flex-col md:flex-row w-full'> {/* Reestructuracion del formulario flex en fila */}
+                <div className="flex flex-col md:w-[25%] md:mr-2">
                   <label>Teléfono</label>
                   <input
                     type="tel"
@@ -102,7 +103,7 @@ function Home() {
                   />
                 </div>
 
-                <div className="flex flex-col w-full ml-2">
+                <div className="flex flex-col md:w-full md:ml-2">
                   <label>Correo</label>
                   <input
                     type="email"
