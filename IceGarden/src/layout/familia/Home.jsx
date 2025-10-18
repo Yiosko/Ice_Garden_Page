@@ -18,35 +18,37 @@ function Home() {
     <div className="min-h-screen flex flex-col md:flex-row">
       <div className="flex-1 flex justify-center items-center bg-white">
         <form
-          className="flex flex-col gap-4 bg-pink-100 p-6 rounded-xl shadow-lg w-full max-w-md"
+          className="flex flex-col gap-4 bg-pink-100 p-6 rounded-xl shadow-lg w-[50vw] "
           onSubmit={(e) => {
             e.preventDefault();
             alert("Formulario enviado correctamente ✅");
           }}
         >
-          
-          <div className="flex flex-col">
-            <label>Nombre</label>
-            <input
-              type="text"
-              value={nombre}
-              onChange={(e) => handleNameChange(setNombre, e.target.value)}
-              className="border p-2 rounded-lg"
-              placeholder="Ejemplo: Marlon"
-              required
-            />
-          </div>
+          <div className='flex row'>
+              <div className='flex flex-col w-full ml-2 mr-2'>
+              <label>Nombre</label>
+              <input
+                type="text"
+                value={nombre}
+                onChange={(e) => handleNameChange(setNombre, e.target.value)}
+                className="w-full border p-2 rounded-lg"
+                placeholder="Ejemplo: Marlon"
+                required
+              />
+              </div>
 
-          <div className="flex flex-col">
-            <label>Apellidos</label>
-            <input
-              type="text"
-              value={apellidos}
-              onChange={(e) => handleNameChange(setApellidos, e.target.value)}
-              className="border p-2 rounded-lg"
-              placeholder="Ejemplo: Torres Chavarro"
-              required
-            />
+              <div className='flex flex-col w-full ml-2 mr-2'>
+                <label>Apellidos</label>
+                <input
+                  type="text"
+                  value={apellidos}
+                  onChange={(e) => handleNameChange(setApellidos, e.target.value)}
+                  className="w-full border p-2 rounded-lg"
+                  placeholder="Ejemplo: Torres Chavarro"
+                  required
+                />
+              </div>
+
           </div>
 
           <div className="flex flex-col">
@@ -58,8 +60,8 @@ function Home() {
               required
             >
               <option value="">Seleccione una opción</option>
-              <option value="1">Vacante</option>
-              <option value="2">Franquicia</option>
+              <option value="1">Vacante</option> {/* estado 1 ACTIVA BOTON ENVIAR */}
+              <option value="2">Franquicia</option> {/* estado 2 ACTIVA BOTON ENVIAR */}
             </select>
           </div>
 
@@ -162,7 +164,7 @@ function Home() {
 
           <button
             type="submit"
-            className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg mt-4 transition-all"
+            className={` bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg mt-4 transition-all ${stateMotivo == 0 ? 'hidden' : 'block'}`}
           >
             Enviar
           </button>
