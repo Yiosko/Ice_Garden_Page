@@ -1,4 +1,3 @@
-import '../../style/App.css';
 import { useState } from 'react';
 
 function Home() {
@@ -16,16 +15,16 @@ function Home() {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
-      <div className="flex-1 flex justify-center items-center bg-white">
+      <div className="flex-1 flex justify-center items-center">
         <form
-          className="flex flex-col gap-4 bg-pink-100 p-6 rounded-xl shadow-lg w-[50vw] "
+          className="flex flex-col gap-4 bg-gray-100 text-black p-6 rounded-xl shadow-lg w-[85vw] md:w-[50vw] "
           onSubmit={(e) => {
             e.preventDefault();
             alert("Formulario enviado correctamente ✅");
           }}
         >
-          <div className='flex row'>
-              <div className='flex flex-col w-full ml-2 mr-2'>
+          <div className='flex row'> {/* Reestructuracion del formulario flex en fila */}
+              <div className='flex flex-col w-full mr-2'>
               <label>Nombre</label>
               <input
                 type="text"
@@ -37,7 +36,7 @@ function Home() {
               />
               </div>
 
-              <div className='flex flex-col w-full ml-2 mr-2'>
+              <div className='flex flex-col w-full ml-2'>
                 <label>Apellidos</label>
                 <input
                   type="text"
@@ -66,47 +65,52 @@ function Home() {
           </div>
 
           {stateMotivo === "1" && (
-            <div className="flex flex-col gap-4 mt-4">
-              <div className="flex flex-col">
-                <label>Edad</label>
-                <input
-                  type="number"
-                  className="border p-2 rounded-lg"
-                  min="18"
-                  max="70"
-                  required
-                />
-              </div>
+              <div className="flex flex-col gap-4 mt-4">
+              <div className='flex row w-full'> {/* Reestructuracion del formulario flex en fila */}
+                <div className="flex flex-col mr-2">
+                  <label>Edad</label>
+                  <input
+                    type="number"
+                    className="border p-2 rounded-lg no-spinners [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none
+                              [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-inner-spin-button]:m-0"
+                    min="18"
+                    max="70"
+                    required
+                  />
+                </div>
 
-              <div className="flex flex-col">
-                <label>Experiencia</label>
-                <select className="border p-2 rounded-lg" required>
-                  <option value="">Seleccione una opción</option>
-                  <option value="Si">Sí</option>
-                  <option value="No">No</option>
-                </select>
-              </div>
+                <div className="flex flex-col ml-2 w-full">
+                  <label>Experiencia</label>
+                  <select className="border p-2 rounded-lg" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="Si">Sí</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+            </div>
 
-              <div className="flex flex-col">
-                <label>Teléfono</label>
-                <input
-                  type="tel"
-                  className="border p-2 rounded-lg"
-                  pattern="[0-9]{10}"
-                  title="Debe contener solo números (10 dígitos)"
-                  placeholder="Ejemplo: 3105642598"
-                  required
-                />
-              </div>
+              <div className='flex row w-full'> {/* Reestructuracion del formulario flex en fila */}
+                <div className="flex flex-col w-[25%] mr-2">
+                  <label>Teléfono</label>
+                  <input
+                    type="tel"
+                    className="border p-2 rounded-lg"
+                    pattern="[0-9]{10}"
+                    title="Debe contener solo números (10 dígitos)"
+                    placeholder="Ejemplo: 3105642598"
+                    required
+                  />
+                </div>
 
-              <div className="flex flex-col">
-                <label>Correo</label>
-                <input
-                  type="email"
-                  className="border p-2 rounded-lg"
-                  placeholder="Ejemplo: correo@gmail.com"
-                  required
-                />
+                <div className="flex flex-col w-full ml-2">
+                  <label>Correo</label>
+                  <input
+                    type="email"
+                    className="border p-2 rounded-lg"
+                    placeholder="Ejemplo: correo@gmail.com"
+                    required
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col">
