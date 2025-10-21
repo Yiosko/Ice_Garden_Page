@@ -103,6 +103,11 @@ function Home () {
         }
     }
 
+    const totalPedido = Object.values(pedido).reduce(
+        (acum, items) => acum +(items.valorTotal || 0),
+        0
+    );
+
     return (
         <>
             <div className="min-h-screen relative">
@@ -182,12 +187,18 @@ function Home () {
                                     TOTAL: 
                                 </span>
                                 <span className='text-2xl font-medium pl-2'>
-                                    $ 100000
+                                    ${' '}{totalPedido.toLocaleString('es-CO')}
                                 </span>
                             </span>
 
-                            <span className='flex flex-col justify-center rounded-2xl bg-white w-[92%] h-[55vh] mt-4'>
+                            <span className='flex flex-col justify-center rounded-2xl bg-white text-black w-[92%] h-[55vh] mt-4'>
                                 Formas de pago
+                                <div className='grid grid-flow-col md:grid-flow-row grid-cols-4'>
+                                    <div className="pago m-1 border-2 border-black">Debito</div>
+                                    <div className="pago m-1 border-2 border-black">Credito</div>
+                                    <div className="pago m-1 border-2 border-black">Wompi</div>
+                                    <div className="pago m-1 border-2 border-black">PSE</div>
+                                </div>
                             </span>
                         </div>
 
