@@ -1,4 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-BBH: "BBH Sans Bartle", sans-serif;
+  --font-beba: "Bebas Neue", sans-serif;
+  --font-barrio: "Barrio", sans-serif;
+}
 
 #root {
   max-width: 1820px;

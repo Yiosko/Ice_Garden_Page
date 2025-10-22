@@ -77,11 +77,11 @@ function Pago ({ pedido, eliminarHelado, setPasos, totalPedido}){
 
         </div>
 
-        <button className='bg-pink-600 rounded-2xl w-[35vw] h-[5vh] m-2'
+        <button className='bg-pink-600 rounded-2xl w-[35vw] h-[5vh] m-2 font-beba'
                 onClick={() => setPasos(1)}>
             Regresar
         </button>
-        <button className='bg-emerald-700 rounded-2xl w-[35vw] h-[5vh] m-2'
+        <button className='bg-emerald-700 rounded-2xl w-[35vw] h-[5vh] m-2 font-beba'
                 onClick={() => alert('Aun no esta habilitada')}>
             Relizar Pago
         </button>

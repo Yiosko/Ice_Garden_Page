@@ -23,9 +23,9 @@ function Home() {
             alt="Helado Artic Ice Garden"
             className="w-full h-auto object-contain"
           />
-          <div className='absolute top-8 md:top-28 left-6'>
-            <h2 className='text-4xl md:text-2x1 font-bold text-gray-600'>SIGUE TUS INSTINTOS</h2>
-            <p className='text-7xl md:text-2x1 font-extrabold'>
+          <div className='flex flex-col w-full justify-center absolute top-8 md:top-28'>
+            <h2 className='text-3xl md:text-4x1 font-BBH text-gray-600'>SIGUE TUS INSTINTOS</h2>
+            <p className='text-4xl md:text-6xl font-BBH'>
               HAZ PARTE DE NUESTRA HISTORIA
             </p>
 
@@ -39,10 +39,10 @@ function Home() {
           <div className='absolute bottom-0 right-0 z-0 opacity-75 md:opacity-100'>
             <PalmeraSvg className='w-xs md:w-xl h-auto' />
           </div>
-          <h2 className='text-4xl md:text-3x1 font-bold p-4 z-10'>ORDENAR TU PEDIDO AQUI</h2>
+          <h2 className='text-6xl md:text- font-beba p-4 z-10'>ORDENAR TU PEDIDO AQUí</h2>
           <button
             onClick={() => navegar('/Ordenar')}
-            className='text-[#db72c4] px-6 py-2 rounded-lg font-bold shadow-md hover:bg-gray-200 transition z-10' style={{backgroundColor: '#ffff'}}>
+            className='text-[#db72c4]  text-4xl px-6 py-2 rounded-lg font-beba shadow-md hover:bg-gray-300 hover:text-[#8f4d80] transition z-10' style={{backgroundColor: '#ffff'}}>
             ORDENAR
           </button>
         </div>
@@ -54,10 +54,10 @@ function Home() {
 
         <div className='relative flex flex-1 flex-col items-center bg-[#b26db5] justify-center p-8'>
           <div className='z-10'>
-            <h2 className='text-2xl md:text-3xl font-extrabold md:mb-4 text-gray-200'>
+            <h2 className='text-2xl md:text-6xl font-beba text-gray-200'>
               SOMOS FAMILIA DE LA PATRIA HUILENSE, LA SANGRE OPITA
             </h2>
-            <p className='text-lg md:text-3xl bg-white font-semibold text-gray-900 md:text-white md:bg-transparent md:mt-36'>
+            <p className='text-lg md:text-5xl bg-white font-beba text-gray-900 md:text-[#f2de8d] md:bg-transparent md:mt-16'>
               LLEVAMOS MAS DE DIEZ AÑOS DANDO LA MEJOR EXPERIENCIA AL PALADAR DE NUESTRA GENTE
             </p>
           </div>
@@ -83,10 +83,10 @@ function Home() {
           <img src={ GardenCrunch } alt="Crunch" className='w-auto h-auto max-w-full border-t-8 border-t-lime-600 sm:border-none' />
 
           <div className='z-10 absolute'>
-            <h2 className='text-2xl md:text-8xl font-extrabold mb-4 md:mt-36'>
+            <h2 className='text-2xl md:text-5xl font-BBH mb-4 md:mt-36'>
               HELADO <b className='text-[#D6FF08]'>100%</b> SALUDABLE
             </h2>
-            <p className='text-1xl md:mt-36 md:text-6xl font-semibold'>
+            <p className='text-1xl md:mt-36 md:text-4xl font-BBH'>
               EXISTE EL HELADO Y LUEGO ESTA EL HELADO DE YOGURT DE <b className='text-[#D6FF08]'>ICE GARDEN</b>,
               NO HAY UNA RECETA ESCRITA. <b className='text-[#D6FF08]'>NO TE CIERRES A NUEVAS EXPERIENCIAS</b>.
             </p>

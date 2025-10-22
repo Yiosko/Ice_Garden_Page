@@ -45,7 +45,7 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
 
                         </div>
 
-                        <h2 className='text-2xl font-bold md:mb-3 text-cyan-300'>
+                        <h2 className='text-3xl font-beba md:mb-3 text-emerald-700 z-10'>
                             Opciones de {vista}
                         </h2>
                         <div className='flex flex-col w-4 md:flex-row justify-between items-center md:w-6xl'>
@@ -58,7 +58,7 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                                         <div className='card-front relative bg-cover bg-center blur-md' style={{ backgroundImage: `url(${opcion.img})` }}>
                                             <div className="h-64 md:h-96 absolute rounded-2xl min-w-60 inset-0 bg-white opacity-35" style={{borderRadius: '10px'}}></div>
 
-                                            <p className='z-10'>{opcion.tamaño.toLocaleUpperCase()}</p>
+                                            <p className='z-10 text-4xl font-beba text-cyan-600'>{opcion.tamaño.toLocaleUpperCase()}</p>
 
                                         </div>
                                         <div className='flex flex-col card-back'  style={{
@@ -67,9 +67,9 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                                                                                             backgroundPosition: 'center'
                                                                                         }}>
                                             <span className='text-base font-bold text-left'>
-                                                <div className="text-cyan-500">{opcion.tamaño}</div> Maximo toppings <div className="text-cyan-500 inline">{opcion.topMax} </div>
+                                                <div className="font-beba text-cyan-700">{opcion.tamaño}</div> Maximo toppings <div className="font-beba text-cyan-700 inline">{opcion.topMax} </div>
                                             </span>
-                                            <span className='text-sm font-bold text-justify p-4'>
+                                            <span className='text-sm font-beba text-cyan-900 bg-white text-justify p-4'>
                                                 {opcion.descripcion}
                                             </span>
 

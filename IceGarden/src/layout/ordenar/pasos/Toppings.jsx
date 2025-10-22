@@ -111,11 +111,11 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
                             </div>
                         </div>
                     </div>
-                    <button className='bg-cyan-500 rounded-2xl w-[35vw] h-[5vh] m-2'
+                    <button className='bg-cyan-500 rounded-2xl w-[35vw] h-[5vh] m-2 font-beba'
                             onClick={() => setPasos(1)}>
                         Ordenar Otro
                     </button>
-                    <button className='bg-emerald-600 rounded-2xl w-[35vw] h-[5vh] m-2'
+                    <button className='bg-emerald-600 rounded-2xl w-[35vw] h-[5vh] m-2 font-beba'
                             onClick={() => setPasos(3)}>
                         Continuar Pago
                     </button>
