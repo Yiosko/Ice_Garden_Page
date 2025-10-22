@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { recipientes, toppings } from '../../utils/herramientas';
 import imgFondo from '../../assets/ordenar/fondoIce.png';
+import '../../style/App.css';
 
 import Presentaciones from './pasos/Presentaciones';
 import Toppings       from './pasos/Toppings';
