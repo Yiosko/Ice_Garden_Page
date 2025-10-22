@@ -24,8 +24,8 @@ function Home() {
             className="w-full h-auto object-contain"
           />
           <div className='flex flex-col w-full justify-center absolute top-8 md:top-28'>
-            <h2 className='text-3xl md:text-4x1 font-BBH text-gray-600'>SIGUE TUS INSTINTOS</h2>
-            <p className='text-4xl md:text-6xl font-BBH'>
+            <h2 className='text-2xl md:text-4x1 font-BBH text-gray-600'>SIGUE TUS INSTINTOS</h2>
+            <p className='text-3xl md:text-6xl font-BBH'>
               HAZ PARTE DE NUESTRA HISTORIA
             </p>
 
