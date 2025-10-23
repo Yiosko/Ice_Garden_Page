@@ -35,7 +35,7 @@ function Home() {
 
         <div className="flex-1 flex flex-col items-center min-h-screen bg-[#F7E8E4] justify-center p-6 relative">
           <div className='absolute top-0 left-0 z-0 md:block'>
-            <SolSvg className="w-1/2 md:w-80 h-auto " />
+            <SolSvg className="w-[60vw] md:w-80 h-auto " />
           </div>
           <div className='absolute bottom-0 right-0 z-0'>
             <PalmeraSvg className='w-xs md:w-xl h-auto' />
@@ -55,10 +55,10 @@ function Home() {
 
         <div className='relative flex flex-1 flex-col items-center bg-[#F7E8E4] justify-center p-8'>
           <div className='z-10'>
-            <h2 className='text-2xl md:text-6xl font-beba text-black'>
+            <h2 className='text-5xl md:text-6xl font-beba text-black'>
               SOMOS FAMILIA DE LA PATRIA HUILENSE, LA SANGRE OPITA
             </h2>
-            <p className='text-lg md:text-5xl font-beba md:text-[#CD7259] md:bg-transparent md:mt-16'>
+            <p className='text-4xl md:text-5xl font-beba md:text-[#CD7259] md:bg-transparent md:mt-16'>
               LLEVAMOS MAS DE DIEZ AÑOS DANDO LA MEJOR EXPERIENCIA AL PALADAR DE NUESTRA GENTE
             </p>
           </div>
@@ -81,20 +81,20 @@ function Home() {
       </div>
       
         <div className='relative w-full bg-[#F7E8E4] h-full flex flex-row items-center'>
-          <img src={ GardenCrunch } alt="Crunch" className='w-[40%] h-[70%] max-w-full opacity-90 m-6' />
-
-            <div className='z-8 h-[80%] absolute top-0 right-0'>
-              <FlorSvg className="w-3xs md:w-xs h-auto opacity-80 md:opacity-100" />
-            </div>
+          <img src={ GardenCrunch } alt="Crunch" className='h-full w-[40%] md:h-[70%] max-w-full opacity-90 m-1 md:m-6' />
 
           <div className='z-10'>
-            <h2 className='text-2xl md:text-5xl top-0 text-black font-BBH mb-4 md:mt-36 z-10'>
+            <h2 className='text-xs md:text-5xl top-0 text-black font-BBH mb-4 md:mt-36 z-10'>
               HELADO 100% SALUDABLE
             </h2>
-            <p className='text-1xl md:mt-36 text-black md:text-3xl font-play'>
+            <p className='text-xs md:mt-36 text-black md:text-3xl font-play'>
               EXISTE EL HELADO Y LUEGO ESTA EL HELADO DE YOGURT DE <b className='text-[#CD7259]'>ICE GARDEN</b>,
               NO HAY UNA RECETA ESCRITA. <b className='text-[#CD7259]'>NO TE CIERRES A NUEVAS EXPERIENCIAS</b>.
             </p>
+          </div>
+
+          <div className='flex justify-end z-8 w-full absolute top-0 right-0 md:h-[80%]'>
+            <FlorSvg className="w-[20%] md:w-xs md:opacity-100" />
           </div>
         </div>
     </>
