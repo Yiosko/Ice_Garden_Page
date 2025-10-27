@@ -5,6 +5,7 @@ import Home   from "../layout/about/Home"
 function About () {
     return (
         <>
+            
             <Header />
             <Home />
             <Footer />
