@@ -1,5 +1,5 @@
 import '../style/App.css';
-import Header from '../layout/Header';
+import Header from '../layout/header';
 import Footer from '../layout/Footer';
 import Home from '../layout/inicio/Home';
 
