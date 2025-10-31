@@ -1,3 +1,5 @@
+import IncognitaSVG from "../../../assets/ordenar/icons/toppings/incognita/IncognitaSVG";
+
 function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCategoria, setSubCat, agregarToppings, eliminarTopping, setPasos, HeladoIconP }){
     return (<>
                 <div className='flex overflow-x-auto overflow-y-hidden row mx-auto items-center w-full max-w-7xl h-[14vh] pt-4 rounded-2xl mb-3'>
@@ -97,7 +99,7 @@ function Toppings ({ pedido, helado, toppings,  categoria, setCategoria, subCate
                                                 className="flex flex-col relative justify-between items-center bg-emerald-400 m-1 px-3 py-2 rounded-lg w-[50%] md:w-[70%] hover:bg-emerald-500"
                                                 onClick={() => agregarToppings(topping)}
                                             >
-                                                {Icono && <Icono className="w-[70%] h-[70%]" />}
+                                                {Icono ? <Icono className="w-[70%] h-[70%]" /> : <IncognitaSVG className="w-[70%] h-[70%]" />}
                                                 <div className="w-full h-full inset-0 absolute opacity-0 hover:opacity-100">
                                                     <p className="font-bold absolute left-2 top-2">{topping.name.toLocaleUpperCase()}</p>
                                                 </div>
