@@ -3,6 +3,7 @@ import imgGrande    from '../assets/ordenar/imgGrande.png';
 import imgGarden    from '../assets/ordenar/imgGarden.png';
 import imgSmoothie  from '../assets/ordenar/imgSmoothie.png';
 import imgLitro     from '../assets/ordenar/imgLitro.png';
+import imgDubai     from '../assets/ordenar/imgDubai.png'
 
 import MedianoSVG   from '../assets/ordenar/icons/MedianoSVG'; // ? PRESENTACIONES
 import GrandeSVG    from '../assets/ordenar/icons/GrandeSVG';
@@ -47,7 +48,7 @@ export const recipientes = [
         'opciones': [
             {tamaño: 'Iconic',    topMax: 1, freeTop: 0, precio: 16900, descripcion: ''},
             {tamaño: 'Piscracho', topMax: 0, freeTop: 0, precio: 20000, descripcion: ''},
-            {tamaño: 'Dubai',     topMax: 0, freeTop: 0, precio: 22000, descripcion: ''}
+            {tamaño: 'Dubai',     topMax: 0, freeTop: 0, precio: 22000, descripcion: 'Verde pistacho con katai que hace un sonido particular "crunch"', img: imgDubai}
         ]
     }
 ];

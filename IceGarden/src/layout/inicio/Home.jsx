@@ -56,7 +56,7 @@ function Home() {
         <div className='relative flex flex-1 flex-col items-center bg-[#F7E8E4] justify-center p-8'>
           <div className='z-10'>
             <h2 className='text-5xl md:text-6xl font-beba text-black'>
-              SOMOS FAMILIA DE LA PATRIA HUILENSE, LA SANGRE OPITA
+              "SOMOS FAMILIA DE LA PATRIA HUILENSE, LA SANGRE OPITA"
             </h2>
             <p className='text-4xl md:text-5xl font-beba md:text-[#CD7259] md:bg-transparent md:mt-16'>
               LLEVAMOS MAS DE DIEZ AÑOS DANDO LA MEJOR EXPERIENCIA AL PALADAR DE NUESTRA GENTE

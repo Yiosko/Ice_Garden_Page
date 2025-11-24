@@ -15,7 +15,6 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
 
                     <div className='flex relative overflow-x-auto overflow-y-hidden row mx-auto items-center w-full max-w-7xl md:h-[14vh] rounded-2xl mb-3'>
                         <div className="w-full max-w-7xl h-[14vh] bg-white absolute opacity-50 inset-0">
-                            {/* fondo */}
                         </div>
                         {
                             Object.keys(pedido).map((idHelado) => {
@@ -41,9 +40,7 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                     </div>
 
                     <div className='flex relative flex-col items-center max-w-7xl mx-auto p-6'>
-                        <div className="rounded-2xl absolute bg-white opacity-50 inset-0">
-
-                        </div>
+                        <div className="rounded-2xl absolute bg-white opacity-50 inset-0"></div>
 
                         <h2 className='text-3xl font-beba md:mb-3 text-emerald-700 z-10'>
                             Opciones de {vista}
@@ -56,7 +53,6 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                                     <div className='card-inner'>
                                         
                                         <div className='card-front relative bg-cover bg-center blur-md' style={{ backgroundImage: `url(${opcion.img})` }}>
-                                            <div className="h-64 md:h-96 absolute rounded-2xl min-w-60 inset-0 bg-white opacity-35" style={{borderRadius: '10px'}}></div>
 
                                             <p className='z-10 text-4xl font-beba text-cyan-600'>{opcion.tamaño.toLocaleUpperCase()}</p>
 
@@ -66,17 +62,18 @@ function Presentaciones ({ recipientes, vista, setVista, pedido, agregarHelado, 
                                                                                             backgroundSize: 'cover',
                                                                                             backgroundPosition: 'center'
                                                                                         }}>
-                                            <span className='text-base font-bold text-left'>
-                                                <div className="font-beba text-cyan-700">{opcion.tamaño}</div> Maximo toppings <div className="font-beba text-cyan-700 inline">{opcion.topMax} </div>
+                                        <div className="h-64 md:h-96 absolute rounded-2xl min-w-60 inset-0 bg-white opacity-50 -z-0" style={{borderRadius: '10px'}}></div>
+                                            <span className='text-base font-bold text-left z-10'>
+                                                <div className="font-beba text-cyan-700">{opcion.tamaño}</div><span className="font-beba text-green-800">Maximo toppings </span><div className="font-beba text-cyan-700 inline">{opcion.topMax} </div>
                                             </span>
-                                            <span className='text-sm font-beba text-cyan-900 bg-white text-justify p-4'>
+                                            <span className='text-sm font-beba text-cyan-900 text-justify p-4  z-10'>
                                                 {opcion.descripcion}
                                             </span>
 
-                                            <span className="text-emerald-600 font-extrabold">
+                                            <span className="text-emerald-600 font-extrabold z-10">
                                             ${opcion.precio}
                                             </span>
-                                            <button className='bg-emerald-400 text-base p-1'
+                                            <button className='bg-emerald-400 text-base p-1 z-10'
                                                     onClick={() => {agregarHelado(opcion)}}>
                                                 Escoger
                                             </button>
