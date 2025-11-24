@@ -30,6 +30,10 @@ function Header() {
             Ubicacion
           </NavLink>
 
+          <NavLink to="/Contacto" end>
+            Contacto
+          </NavLink>
+
         </div>
 
         <div className="lg:hidden">
